@@ -94,7 +94,7 @@ VPN_USER="$YOUR_USERNAME"
 VPN_PASSWORD="$YOUR_PASSWORD"
 VPN_SERVER_ADDR="$YOUR_SERVER_ADDR"
 # Used as generating pkcs12 key's export password
-VPN_PKCS12_EXPORT_PWD="$(LC_CTYPE=C tr -dc 'A-HJ-NPR-Za-km-z2-9' < /dev/urandom | head -c 16)"
+VPN_PKCS12_EXPORT_PWD="$(LC_CTYPE=C tr -dc 'A-HJ-NPR-Za-km-z2-9' < /dev/urandom | base64 | head -c 16)"
 
 if [ -z "$VPN_IPSEC_PSK" ] && [ -z "$VPN_USER" ] && [ -z "$VPN_PASSWORD" ]; then
   bigecho "VPN credentials not all set by user. re-generating random PSK, password and server address..."
