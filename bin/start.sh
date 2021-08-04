@@ -38,5 +38,5 @@ cd "${this_dir}/.."
 
 VPN_IPSEC_PSK='12345678' \
 VPN_USER='test' \
-VPN_PASSWORD='123456' bash vpnsetup_mac.sh
+VPN_PASSWORD='123456' bash "$@"
 
